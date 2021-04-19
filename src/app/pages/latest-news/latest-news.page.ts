@@ -280,13 +280,19 @@ export class LatestNewsPage implements OnInit {
   }
 
   ionViewDidEnter(){
-    // this.all.http.getNews().then((res:any) =>{
-    //   console.log(res);
+    var param = {
+      q:'bitcoin',
+      from:'2021-04-19',
+      sortBy:'publishedAt',
+      apiKey:'8597caf35fc24e5e8c76fb843ae9a197'
+    };
+    this.all.http.getNews(param).then((res:any) =>{
+      console.log(res);
     
       
-    // }).catch(error => {
-    //   console.log(error);
-    // });
+    }).catch(error => {
+      console.log(error);
+    });
     console.log(this.resData);
     
   }

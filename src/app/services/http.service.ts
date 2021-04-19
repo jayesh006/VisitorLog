@@ -11,13 +11,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getNews(){
-    var param = {
-      q:'bitcoin',
-      from:'2021-04-19',
-      sortBy:'publishedAt',
-      apiKey:'8597caf35fc24e5e8c76fb843ae9a197'
-    };
+  getNews(param){
     return new Promise( (resolve, reject) => {
       return this.http.get(Url+`?q=${param.q}&from=${param.from}&sortBy=${param.sortBy}&apiKey=${param.apiKey}`).subscribe(
         res=> {
