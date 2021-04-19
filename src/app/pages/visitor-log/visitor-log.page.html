@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Visitor Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="text-align: center; width: 100%;" *ngIf='!data'>
+    <ion-label >No Records</ion-label>
+  </div>
+  <ion-row *ngIf='data'>
+    <ion-col size=12 size-md=6 offset-md=3 size-lg=6 offset-md=3 class="ion-padding">
+      
+      <ion-item>
+        <ion-label >
+          Name : {{data?.name}}
+        </ion-label>
+        <!-- <ion-input disabled='true' type='text' [(ngModel)]='name' placeholder='Enter Visitor Name'></ion-input> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label >
+          Email : {{data?.email}}
+        </ion-label>
+        <!-- <ion-input disabled='true' type='text' [(ngModel)]='email' placeholder='Enter Visitor Name'></ion-input> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label >
+          Type of visit : {{data?.visitType}}
+        </ion-label>
+        <!-- <ion-select disabled='true' placeholder='Select Visit type' [(ngModel)]='visitType'>
+          <ion-select-option value="Meeting">Meeting</ion-select-option>
+          <ion-select-option value="Delivery">Delivery</ion-select-option>
+          <ion-select-option value="Personal">Personal</ion-select-option>
+        </ion-select> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label >
+          Person to visit : {{data?.visitPerson}}
+        </ion-label>
+        <!-- <ion-input type='text' disabled='true' [(ngModel)]='visitPerson' placeholder='Enter Visitor Name'></ion-input> -->
+      </ion-item>
+
+      <ion-item >
+        <ion-label >
+          Date of Entry : {{data?.entryDate}}
+        </ion-label>
+        <!-- <ion-datetime disabled='true' [(ngModel)]='entryDate'  displayFormat="DD MM YYYY" ></ion-datetime> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label >
+          Time to entry : {{data?.entrytime}}
+        </ion-label>
+        <!-- <ion-datetime disabled='true' [(ngModel)]='entrytime' displayFormat="hh:mm:A" placeholder='Select Entry Time' ></ion-datetime> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label >
+          Time to exit : {{data?.exitTime}}
+        </ion-label>
+        <!-- <ion-datetime disabled='true' [(ngModel)]='exitTime' displayFormat="hh:mm:A" placeholder='Select Exit Time'></ion-datetime> -->
+      </ion-item>
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>

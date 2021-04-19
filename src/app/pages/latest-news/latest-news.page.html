@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Latest News</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor='let data of resData?.articles' class="ion-padding">
+          <ion-label>Author: {{data?.author}}</ion-label>
+          <br>
+          <br>
+          <ion-label>Published Date : {{data?.publishedAt}}</ion-label>
+          <br>
+          <br>
+        <ion-row>
+          <ion-col size=5 class="ion-align-self-center">
+            <img src={{data?.urlToImage}} width='150px' height='150px'>
+          </ion-col>
+          <ion-col size=7 class="ion-align-self-center">
+            <ion-label>Description :  {{data?.description}}</ion-label>
+          </ion-col>
+        </ion-row>
+    
+  </ion-card>
+
+</ion-content>
